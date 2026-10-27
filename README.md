@@ -8,7 +8,7 @@ Site estático (HTML/CSS/JS), pronto para deploy no Vercel.
 - `palestra.html` — Palestra "A Jornada do CEO"
 - `livro.html` — O livro (Amazon + Editora)
 - `acervo.html` — Hub da newsletter, filtrável por 6 eixos
-- `contato.html` — Formulário (envia para arthur.lavieri@ascenda360.com)
+- `contato.html` — Formulário (envia para contato@novaboard.com.br)
 - `privacidade.html` — LGPD
 - `css/style.css` · `js/main.js` · `data/edicoes.json` · `img/`
 
