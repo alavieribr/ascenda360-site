@@ -71,3 +71,23 @@ function initAcervo(){
   }
 }
 document.addEventListener('DOMContentLoaded', initAcervo);
+
+// Vídeo em destaque na home: autoplay mudo quando visível, botão de som
+(function(){
+  var v=document.getElementById('video-palestra'); if(!v) return;
+  var btn=document.querySelector('.video-som');
+  var reduz=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(reduz){ v.setAttribute('controls',''); if(btn) btn.style.display='none'; return; }
+  if('IntersectionObserver' in window){
+    new IntersectionObserver(function(es){ es.forEach(function(e){
+      if(e.isIntersecting){ var p=v.play(); if(p&&p.catch) p.catch(function(){ v.setAttribute('controls',''); }); }
+      else v.pause();
+    });},{threshold:0.35}).observe(v);
+  } else { v.setAttribute('controls',''); }
+  if(btn) btn.addEventListener('click',function(){
+    v.muted=!v.muted;
+    if(!v.muted){ v.currentTime=0; v.play(); }
+    btn.textContent=v.muted?'🔇 Ativar som':'🔊 Som ativado';
+    btn.setAttribute('aria-pressed',String(!v.muted));
+  });
+})();

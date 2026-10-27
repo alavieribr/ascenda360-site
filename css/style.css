@@ -223,3 +223,15 @@ img{max-width:100%;display:block}
   .proof .wrap{gap:20px}.proof-sep{display:none}
   .hero-cta .btn,.news-cta .btn{width:100%;justify-content:center}
 }
+
+/* ---- Vídeo em destaque (home) ---- */
+.split.s-video{grid-template-columns:minmax(260px,360px) 1fr;gap:56px}
+.video-frame{position:relative;border-radius:14px;overflow:hidden;box-shadow:var(--shadow);background:#000;aspect-ratio:9/16}
+.video-frame video{display:block;width:100%;height:100%;object-fit:cover}
+.video-som{position:absolute;right:12px;bottom:12px;background:rgba(8,18,42,.82);color:#fff;border:1px solid var(--orange);
+  border-radius:999px;padding:8px 14px;font:600 13px 'Inter',sans-serif;cursor:pointer}
+.video-som:hover{background:var(--orange);color:var(--navy)}
+@media(max-width:880px){
+  .split.s-video{grid-template-columns:1fr;gap:28px}
+  .video-frame{max-width:340px;margin:0 auto}
+}
